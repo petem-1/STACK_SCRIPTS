@@ -1,0 +1,58 @@
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+Warning: Identity file stackcloud15_kp.pem not accessible: No such file or directory.
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+lost connection
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+/home/oracle/scripts/practicedir_pet_jan26/linuxtutorialwork/frog.png: Permission denied
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+Warning: Identity file stackcloud15_kp.pem not accessible: No such file or directory.
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+lost connection
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+Warning: Identity file stackcloud15_kp.pem not accessible: No such file or directory.
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+lost connection
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+Warning: Identity file stackcloud15_kp.pem not accessible: No such file or directory.
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+lost connection
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+scp: /backup/AWSJAN26/practicedir_pet_jan26/BIN/BASH/stackcloud15_kp.pem: Permission denied
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+scp: /backup/AWSJAN26/practicedir_pet_jan26/BIN/BASH/stackcloud15_kp.pem: Permission denied
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+scp: /backup/AWSJAN26/practicedir_pet_jan26/BIN/BASH/stackcloud15_kp.pem: Permission denied
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+scp: /backup/AWSJAN26/practicedir_pet_jan26/BIN/BASH/stackcloud15_kp.pem: Permission denied
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net
+Workflow: Secure Copy (SCP) Transfer
+Starting Cloud Transfer with PEM key
+scp: /backup/AWSJAN26/practicedir_pet_jan26/BIN/BASH/stackcloud15_kp.pem: Permission denied
+Secure copy has FAILED
+Email notification sent to stackcloud15@mkitconsulting.net

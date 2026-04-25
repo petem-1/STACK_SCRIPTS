@@ -1,0 +1,139 @@
+;;; 
+Export: Release 12.1.0.2.0 - Production on Sun Mar 15 01:45:45 2026
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+Starting "STACK_TEMP"."SYS_EXPORT_SCHEMA_49":  stack_temp/******** parfile=/backup/AWSJAN26/DATAPUMP/APEXDB/Peter 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 123.3 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/GRANT/OWNER_GRANT/OBJECT_GRANT
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/VIEW/VIEW
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_45"         6.565 MB    1967 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_39"         5.769 MB    1895 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_41"         6.031 MB    1910 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_42"         6.167 MB    1931 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_43"         6.299 MB    1942 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_37"         5.636 MB    1878 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_30"         4.609 MB    1855 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_31"         4.732 MB    1810 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_33"         4.998 MB    1835 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_36"         5.383 MB    1864 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_29"         4.454 MB    1834 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_02"         248.5 KB    1252 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_03"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_04"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_06"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_09"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_10"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_14"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_20"         387.6 KB    1303 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_26"         478.2 KB    1269 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_47"         389.9 KB    1318 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_48"         403.3 KB    1309 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_28"         354.1 KB    1259 rows
+. . exported "STACK_TEMP"."OPERATION_ACTIVITIES"         457.7 KB    6170 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_34"         239.0 KB    1322 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_40"         242.5 KB    1338 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_44"         243.7 KB    1343 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_24"         220.3 KB    1253 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_25"         219.9 KB    1251 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_27"         215.0 KB    1229 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_32"         220.0 KB    1250 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_46"         219.7 KB    1248 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_01"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_05"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_07"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_08"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_11"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_12"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_13"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_15"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_16"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_17"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_18"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_19"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_21"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_22"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_23"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_35"             0 KB       0 rows
+. . exported "STACK_TEMP"."SYS_EXPORT_SCHEMA_38"             0 KB       0 rows
+. . exported "STACK_TEMP"."DIRECTORY_TRACKING"           48.59 KB     579 rows
+. . exported "STACK_TEMP"."OPERATIONS_MAIN"               47.5 KB     680 rows
+. . exported "STACK_TEMP"."BOOKS"                        5.976 KB       4 rows
+. . exported "STACK_TEMP"."COPY_OF_SP07"                 7.125 KB       5 rows
+. . exported "STACK_TEMP"."COURSES"                      6.843 KB       3 rows
+. . exported "STACK_TEMP"."CREDITCARD"                       0 KB       0 rows
+. . exported "STACK_TEMP"."CREDIT_CARD"                  8.679 KB      12 rows
+. . exported "STACK_TEMP"."CREDIT_CHECK"                   5.5 KB       1 rows
+. . exported "STACK_TEMP"."CUSTOMER"                         0 KB       0 rows
+. . exported "STACK_TEMP"."CUSTOMER_NOV24"               5.945 KB       1 rows
+. . exported "STACK_TEMP"."DEMOGRAPHICS"                 7.617 KB      12 rows
+. . exported "STACK_TEMP"."DEPARTMENT"                   5.992 KB       4 rows
+. . exported "STACK_TEMP"."DEPT_AYANFE"                  6.070 KB       5 rows
+. . exported "STACK_TEMP"."DEPT_KIM"                     8.804 KB      14 rows
+. . exported "STACK_TEMP"."DEPT_LADI"                    6.070 KB       5 rows
+. . exported "STACK_TEMP"."DEPT_PEL"                     6.070 KB       5 rows
+. . exported "STACK_TEMP"."DIRECTORY_TRACKING_BACKUP"    29.10 KB     300 rows
+. . exported "STACK_TEMP"."EMPLOYEE"                     8.804 KB      14 rows
+. . exported "STACK_TEMP"."EMPLOYEE_NEW"                 6.585 KB       4 rows
+. . exported "STACK_TEMP"."EMP_AYANFE"                   8.882 KB      16 rows
+. . exported "STACK_TEMP"."EMP_HUSSEINA"                 8.804 KB      14 rows
+. . exported "STACK_TEMP"."EMP_KIM"                      8.843 KB      15 rows
+. . exported "STACK_TEMP"."EMP_LADI"                     8.843 KB      15 rows
+. . exported "STACK_TEMP"."EMP_PELL"                     8.804 KB      14 rows
+. . exported "STACK_TEMP"."ITEMS"                        6.851 KB       2 rows
+. . exported "STACK_TEMP"."OOW_DEMO_ITEMS_FIN"           7.773 KB      10 rows
+. . exported "STACK_TEMP"."OOW_DEMO_STORES_FIN"          16.41 KB      42 rows
+. . exported "STACK_TEMP"."OOW_DEMO_STORE_PRODUCTS_FIN"  12.14 KB     122 rows
+. . exported "STACK_TEMP"."OPERATIONS"                   6.687 KB       6 rows
+. . exported "STACK_TEMP"."OPERATIONS_09_24_25"          6.695 KB       6 rows
+. . exported "STACK_TEMP"."OPERATIONS_BACK"              31.93 KB     430 rows
+. . exported "STACK_TEMP"."OPERATIONS_BACKUP_020224"     6.656 KB       5 rows
+. . exported "STACK_TEMP"."ORDERS"                       9.890 KB      30 rows
+. . exported "STACK_TEMP"."PRODUCTS"                     8.671 KB      20 rows
+. . exported "STACK_TEMP"."REGIONS"                      6.859 KB       2 rows
+. . exported "STACK_TEMP"."REGIONS_2"                    5.546 KB       3 rows
+. . exported "STACK_TEMP"."RUBBISH"                      5.515 KB       3 rows
+. . exported "STACK_TEMP"."STACK_EMPLOYEES"              7.320 KB       5 rows
+. . exported "STACK_TEMP"."STACK_STUDENTS"               6.820 KB       1 rows
+. . exported "STACK_TEMP"."STORES"                       8.218 KB       2 rows
+. . exported "STACK_TEMP"."STUDENT"                          0 KB       0 rows
+. . exported "STACK_TEMP"."STUDENTS"                     5.968 KB       3 rows
+. . exported "STACK_TEMP"."TEST"                         5.937 KB       2 rows
+. . exported "STACK_TEMP"."TEST_2"                         6.5 KB      33 rows
+. . exported "STACK_TEMP"."TEST_INSERT"                      0 KB       0 rows
+. . exported "STACK_TEMP"."TRACKING"                     9.343 KB      30 rows
+. . exported "STACK_TEMP"."TRAINING_CLASS"                   0 KB       0 rows
+. . exported "STACK_TEMP"."TRAIN_THE_TRAINER"                0 KB       0 rows
+. . exported "STACK_TEMP"."DEMOGRAPHIC"                      0 KB       0 rows
+. . exported "STACK_TEMP"."HOME_WORK"                        0 KB       0 rows
+. . exported "STACK_TEMP"."JOSH_IS_SMART"                    0 KB       0 rows
+. . exported "STACK_TEMP"."OOW_DEMO_REGIONS_FIN"             0 KB       0 rows
+. . exported "STACK_TEMP"."REGIONS_NEW"                      0 KB       0 rows
+. . exported "STACK_TEMP"."SP07_STUDENT"                     0 KB       0 rows
+. . exported "STACK_TEMP"."STAFF"                            0 KB       0 rows
+. . exported "STACK_TEMP"."STATEMENT"                        0 KB       0 rows
+. . exported "STACK_TEMP"."STUDENT1"                         0 KB       0 rows
+. . exported "STACK_TEMP"."STUDENT2"                         0 KB       0 rows
+Master table "STACK_TEMP"."SYS_EXPORT_SCHEMA_49" successfully loaded/unloaded
+******************************************************************************
+Dump file set for STACK_TEMP.SYS_EXPORT_SCHEMA_49 is:
+  /backup/AWSJAN26/DATAPUMP/APEXDB/STACK_TEMP_Peter_03152026014545.dmp
+Job "STACK_TEMP"."SYS_EXPORT_SCHEMA_49" successfully completed at Sun Mar 15 01:46:32 2026 elapsed 0 00:00:47

@@ -1,0 +1,6 @@
+userid=stack_temp/stackinc
+schemas=STACK_TEMP
+remap_schema=STACK_TEMP:STACK_TEMP_PETER_2
+directory=DATA_PUMP_DIR
+dumpfile=STACK_TEMP_PETER_2_03-21-2026_15-51-31.dmp
+logfile=impdp_STACK_TEMP_PETER_2_03-21-2026_15-51-31.log

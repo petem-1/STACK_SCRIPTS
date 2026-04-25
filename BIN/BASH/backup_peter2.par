@@ -1,0 +1,6 @@
+userid=stack_temp/stackinc
+schemas=STACK_TEMP
+dumpfile=peter_backup.dmp
+logfile=peter_backup.log
+directory=DATA_PUMP_DIR
+

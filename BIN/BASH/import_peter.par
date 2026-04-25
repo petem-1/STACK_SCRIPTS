@@ -1,0 +1,6 @@
+userid=stack_temp/stackinc
+schemas=STACK_TEMP
+remap_schema=STACK_TEMP:STACK_TEMP_PETER
+dumpfile=expdp_APEXDB_PETER.dmp
+logfile=import_peter.log
+directory=DATA_PUMP_DIR

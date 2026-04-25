@@ -1,0 +1,7 @@
+userid=stack_temp/stackinc
+schemas=STACK_TEMP
+remap_schema=STACK_TEMP:STACK_TEMP_PETER
+directory=DATA_PUMP_DIR
+table_exists_action=replace
+dumpfile=STACK_TEMP_PETER_04-03-2026_21-04-18.dmp
+logfile=impdp_STACK_TEMP_PETER_04-03-2026_21-04-18.log
