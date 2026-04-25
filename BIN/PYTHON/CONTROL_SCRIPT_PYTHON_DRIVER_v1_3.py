@@ -17,6 +17,7 @@ if sys.argv[1] == "copy_file":
 	SM1_3.copy_file(src,dst)
 
 elif sys.argv[1] == "copy_directory":
-   src = sys.argv[2]
-   runner = sys.argv[3]
-   SM1_3.copy_directory(src,runner)
+	src = sys.argv[2]
+	runner = sys.argv[3]
+	SM1_3.copy_directory(src,runner)
+	print("Copy function called successfully")
