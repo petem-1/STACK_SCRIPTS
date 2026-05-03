@@ -21,3 +21,4 @@ elif sys.argv[1] == "copy_directory":
 	runner = sys.argv[3]
 	SM1_3.copy_directory(src,runner)
 	print("Copy function called successfully")
+	print("Hello World")
