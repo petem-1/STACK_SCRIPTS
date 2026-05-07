@@ -141,7 +141,7 @@ RUNNER: ${RUNNER}"
 #Verify the database is in OPEN status before attempting a backup — an instance can be running but not yet open
    source /home/oracle/scripts/oracle_env_APEXDB.sh
 #Set TNS_ADMIN so the wallet and tnsnames.ora are found — required when running outside an interactive login shell
-	export TNS_ADMIN=$ORACLE_HOME/network/admin
+        export TNS_ADMIN=$ORACLE_HOME/network/admin
 #Connect using the wallet alias and run a status query — output is redirected to the check log
    sqlplus -s /@peter_apexdb <<EOF > ${BACKUP_DBCHECKLOG}
    set heading off feedback off pagesize 0
@@ -781,24 +781,17 @@ cloud_database_migration() {
       ORA_SID="${SOURCE_DB}"
 #Run the export for all schemas in the list
       database_backup
+      ARCHIVE_LIST=""
+      SCRIPT_LIST=""
+      IMPORT_SCRIPTS=""
 #Read each schema name from the file one at a time — IFS= preserves leading/trailing whitespace, -r prevents backslash interpretation
       while IFS= read -r SCHEMA
       do
 #Blank lines in the schema file are skipped to avoid passing an empty value to expdp
          [[ -z "${SCHEMA}" ]] && continue
 
-         echo "--- LISTING SCHEMAS FOR DATABASE MIGRATION INTO CLOUD: ${SCHEMA} ---"
-#Reconstruct the archive name for this schema — must match what database_backup created
-         ARCHIVE="expdp_${SCHEMA}_${RUNNER}_${TS}.tar"
-#Set the SCP source to the archive file in the on-prem backup directory
-         src="${DB_BACKUP_DIR}/${ARCHIVE}"
-#Set SCP variables for the cloud transfer
-         dest_type="cloud"
-         dest_user="${CLOUD_USER}"
-         dest_server="${CLOUD_SERVER}"
-         dest_path="${CLOUD_DATAPUMP_DIR}"
-#Copy the archive to the cloud server's datapump directory
-         secure_copy
+        echo "--- LISTING SCHEMAS FOR DATABASE MIGRATION INTO CLOUD: ${SCHEMA} ---"
+        ARCHIVE="expdp_${SCHEMA}_${RUNNER}_${TS}.tar"
 #Build the import script name and local temp path — this script will run on the cloud server
          IMPORT_SCRIPT_NAME="impdp_${SCHEMA}_${RUNNER}_${TS}.sh"
          IMPORT_SCRIPT_LOCAL="/tmp/${IMPORT_SCRIPT_NAME}"
@@ -820,13 +813,14 @@ PAR_FILE="impdp_${SCHEMA}_${RUNNER}.par"
 LOG_FILE="impdp_${SCHEMA}_${RUNNER}_${TS}.log"
 FULL_LOG_PATH="\${DATA_PUMP_PATH}/\${LOG_FILE}"
 echo "Creating PAR file: \${PAR_FILE}"
-echo "userid=/@peter_${CLOUD_DB,,}" > "\${PAR_FILE}"
+echo "userid=stack_temp/stackinc" > "\${PAR_FILE}"
 echo "schemas=${SCHEMA}" >> "\${PAR_FILE}"
 echo "remap_schema=${SCHEMA}:${SCHEMA}_${RUNNER}" >> "\${PAR_FILE}"
 echo "directory=${DIRECTORY}" >> "\${PAR_FILE}"
 echo "table_exists_action=replace" >> "\${PAR_FILE}"
 echo "dumpfile=\${DMP_NAME}" >> "\${PAR_FILE}"
 echo "logfile=\${LOG_FILE}" >> "\${PAR_FILE}"
+cat "\${PAR_FILE}"
 impdp parfile="\${PAR_FILE}"
 if grep -q "successfully completed" "\${FULL_LOG_PATH}"
 then
@@ -839,21 +833,20 @@ else
    exit 1
 fi
 EOF
-         echo "Changing user permissions for ${IMPORT_SCRIPT_LOCAL} to executable"
 #Make the import script executable before copying it to the cloud server
          chmod +x "${IMPORT_SCRIPT_LOCAL}"
-#Set SCP variables to copy the import script to the cloud practicedir
-         src="${IMPORT_SCRIPT_LOCAL}"
-         dest_type="cloud"
-         dest_user="${CLOUD_USER}"
-         dest_server="${CLOUD_SERVER}"
-         dest_path="${CLOUD_PRACTICEDIR}"
-#Copy the import script to the cloud server
-         secure_copy
-#SSH into the cloud server and execute the import script remotely
-         ssh -i stackcloud15_kp.pem "${CLOUD_USER}@${CLOUD_SERVER}" "bash ${CLOUD_PRACTICEDIR}/${IMPORT_SCRIPT_NAME}"
-      done < "${SCHEMA_LIST_FILE}"
-
+#Add this schema's import script to the list
+         ARCHIVE_LIST="${ARCHIVE_LIST} ${DB_BACKUP_DIR}/${ARCHIVE}"
+         SCRIPT_LIST="${SCRIPT_LIST} ${IMPORT_SCRIPT_LOCAL}"
+         IMPORT_SCRIPTS="${IMPORT_SCRIPTS} bash ${CLOUD_PRACTICEDIR}/${IMPORT_SCRIPT_NAME};"
+       done < "${SCHEMA_LIST_FILE}"
+        echo "Sending all archives to the cloud server"
+        scp -i stackcloud15_kp.pem ${ARCHIVE_LIST} "${CLOUD_USER}@${CLOUD_SERVER}:${CLOUD_DATAPUMP_DIR}/"
+        echo "Success all archives we're sent"
+        echo "Sending all imports to the cloud server"
+        scp -i stackcloud15_kp.pem ${SCRIPT_LIST} "${CLOUD_USER}@${CLOUD_SERVER}:${CLOUD_PRACTICEDIR}/"
+        echo "All Schemas are being imported"
+        ssh -i stackcloud15_kp.pem "${CLOUD_USER}@${CLOUD_SERVER}" "${IMPORT_SCRIPTS}"
    else
       echo "Database Migration ending, schemas have been denied"
       exit 1
@@ -1358,4 +1351,3 @@ case ${FUNCTION} in
    ;;
 esac
 done
-
