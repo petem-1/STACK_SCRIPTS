@@ -69,6 +69,9 @@ def database_import(runner, db_name, schema, directory, dumpfile):
 	#Build the unzipped dumpfile path by stripping the .gz extension
 	output_path=dumpfile.replace(".gz", "")
 	print("Output path for import: {}".format(output_path))
+	#Copy the unzipped dumpfile into the target database datapump directory so impdp can find it
+	datapump_path="/backup/AWSJAN26/DATAPUMP/{}".format(db_name)
+	shutil.copy(output_path, datapump_path)
 	#Build the PAR filename using the runner name
 	par_file="{}.par".format(runner)
 	#Build a timestamp to include in the logfile name — ensures each import run creates a unique log
@@ -80,19 +83,26 @@ def database_import(runner, db_name, schema, directory, dumpfile):
 	directory={}
 	dumpfile={}
 	table_exists_action=replace
-	logfile={}_{}_{}.log""".format(schema, schema, schema, runner, directory, output_path, schema, runner, ts)
+	logfile={}_{}_{}.log""".format(schema, schema, schema, runner, directory, os.path.basename(output_path), schema, runner, ts)
 	#Open the PAR file for writing and write the contents to disk
 	fh=open(par_file, "w")
 	fh.write(par_contents)
 	#Always close the file after writing — ensures all data is flushed to disk before impdp reads it
 	fh.close()
 	#Source the Oracle environment for the target database, then run impdp using the PAR file
-	result=subprocess.run(["bash", "-c", "source /home/oracle/scripts/oracle_env_{}.sh && impdp parfile={}".format(db_name, par_file)])
-	#Check the exit code — a non-zero return code means impdp failed
-	if result.returncode != 0:
-		print("ERROR: Database import failed.")
+	subprocess.run(["bash", "-c", "source /home/oracle/scripts/oracle_env_{}.sh && impdp parfile={}".format(db_name, par_file)])
+	#Build the full path to the impdp log file in the target datapump directory
+	log_file="{}/{}_{}_{}".format(datapump_path, schema, runner, ts) + ".log"
+	#Open and read the impdp log to check for a completion message
+	fh=open(log_file, "r")
+	log_contents=fh.read()
+	fh.close()
+	#Check for successful completion or completion with errors — both mean impdp ran to the end
+	if "successfully completed" in log_contents or "completed with" in log_contents:
+		print("SUCCESS: Database import completed.")
+	else:
+		print("ERROR: Database import failed. Check log: {}".format(log_file))
 		exit()
-	print("SUCCESS: Database import completed.")
 
 #G_Zip() - gzips or unzips a file based on its extension
 def G_Zip(file_path):

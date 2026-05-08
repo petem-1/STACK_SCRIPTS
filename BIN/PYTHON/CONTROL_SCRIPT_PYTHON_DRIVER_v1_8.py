@@ -76,7 +76,7 @@ elif sys.argv[1] == "G_Zip":
 		if answer == "y":
 			#Prompt the user for the absolute path of the file to gzip or unzip
 			filename = input("Enter filename: ")
-			SM1_8.G_Zip(filename)
+			SM1_8.G_Zipp(filename)
 		else:
 			exit()
 	else:
